@@ -7,3 +7,21 @@
 #In ODM2 database schema, "ODM2_for_MySQL.sql"
   -- Added "AUTO_INCREMENT" constraint in the table, "externalidentifiersystems" and "spatialoffsets"
   -- Replaced "BIT" type with "TINYINT (1)" type as the bool type.
+
+  
+GIT Setup
+* using git subtree: see http://blogs.atlassian.com/2013/05/alternatives-to-git-submodule-git-subtree/
+
+** $ git subtree add --prefix=odm2proj/ODM2PythonAPI https://github.com/ODM2/ODM2PythonAPI.git master
+	git fetch https://github.com/ODM2/ODM2PythonAPI.git master
+	From https://github.com/ODM2/ODM2PythonAPI
+	 * branch            master     -> FETCH_HEAD
+	Added dir 'odm2proj/ODM2PythonAPI'
+git remote add -f ODM2PythonAPI https://github.com/ODM2/ODM2PythonAPI.git 
+git subtree add --prefix=odm2proj/ODM2PythonAPI ODM2PythonAPI master --squash
+
+To update:
+git fetch ODM2PythonAPI master
+git subtree pull --prefix=odm2proj/ODM2PythonAPI ODM2PythonAPI master --squash
+
+	
